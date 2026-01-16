@@ -1,0 +1,9 @@
+// .vscode/extensions.json
+{
+  "recommendations": [
+    "ms-python.python",
+    "ms-python.vscode-pylance",
+    "qwtel.sqlite-viewer",
+    "mermaidchart.vscode-mermaid-chart"
+  ]
+}

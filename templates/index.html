@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block main %}
+<form method="POST" action="/add">
+    <input type="text" name="task" placeholder="Enter task" required>
+    <button type="submit">Add</button>
+</form>
+<ul>
+    {% for todo in todos %}
+        <li>
+            <a href="/toggle/{{ todo.id }}">{% if todo.done %}✅{% else %}⬜{% endif %}</a>
+            {{ todo.task }}
+            <a href="/delete/{{ todo.id }}">❌</a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}
