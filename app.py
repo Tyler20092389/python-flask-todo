@@ -7,7 +7,7 @@ from flask import Flask
 from auth import auth_bp, auth0_bp, github_bp, github_auth_bp
 from auth import is_codespaces, is_render
 from todo import todo_bp, init_app as init_todo 
-from todo import db, Todo
+from todo import db, Todo, Category
 from admin import init_admin
 
 
@@ -59,7 +59,7 @@ else:
     redirect_uri = os.getenv('AUTH0_CALLBACK_URL', 'http://localhost:5000/callback')
 
 # Initialize admin interface (secured)
-init_admin(app, db, Todo)
+init_admin(app, db, Todo, Category)
 
 if __name__ == '__main__':
     app.run(debug=True)
